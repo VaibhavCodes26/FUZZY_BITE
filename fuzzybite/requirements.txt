@@ -1,0 +1,6 @@
+Flask
+numpy
+scikit-fuzzy
+pytest
+networkx
+scipy

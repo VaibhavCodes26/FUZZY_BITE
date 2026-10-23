@@ -1,0 +1,42 @@
+﻿import json
+import os
+
+os.makedirs('data', exist_ok=True)
+
+scenarios = [
+  {
+    'scenario_id': 'S1',
+    'description': 'High budget user looking for Italian cuisine.',
+    'restaurants': [
+      {'id': 4, 'features': {'rating': 4.7, 'price_suit': 100, 'dist': 8.5, 'cuisine': 100}, 'true_relevance': 4},
+      {'id': 19, 'features': {'rating': 4.1, 'price_suit': 100, 'dist': 8.0, 'cuisine': 100}, 'true_relevance': 3},
+      {'id': 1, 'features': {'rating': 4.5, 'price_suit': 100, 'dist': 2.5, 'cuisine': 0}, 'true_relevance': 1},
+      {'id': 9, 'features': {'rating': 4.1, 'price_suit': 20, 'dist': 0.5, 'cuisine': 0}, 'true_relevance': 0}
+    ]
+  },
+  {
+    'scenario_id': 'S2',
+    'description': 'Low budget user looking for nearby Street Food.',
+    'restaurants': [
+      {'id': 23, 'features': {'rating': 4.5, 'price_suit': 100, 'dist': 1.1, 'cuisine': 100}, 'true_relevance': 4},
+      {'id': 9, 'features': {'rating': 4.1, 'price_suit': 100, 'dist': 0.5, 'cuisine': 100}, 'true_relevance': 3},
+      {'id': 14, 'features': {'rating': 4.0, 'price_suit': 90, 'dist': 2.0, 'cuisine': 0}, 'true_relevance': 1},
+      {'id': 8, 'features': {'rating': 4.6, 'price_suit': 0, 'dist': 12.0, 'cuisine': 0}, 'true_relevance': 0}
+    ]
+  },
+  {
+    'scenario_id': 'S3',
+    'description': 'Moderate budget looking for South Indian, highly sensitive to distance.',
+    'restaurants': [
+      {'id': 2, 'features': {'rating': 4.2, 'price_suit': 100, 'dist': 1.2, 'cuisine': 100}, 'true_relevance': 4},
+      {'id': 14, 'features': {'rating': 4.0, 'price_suit': 100, 'dist': 2.0, 'cuisine': 100}, 'true_relevance': 3},
+      {'id': 25, 'features': {'rating': 4.1, 'price_suit': 100, 'dist': 3.2, 'cuisine': 100}, 'true_relevance': 2},
+      {'id': 6, 'features': {'rating': 3.5, 'price_suit': 100, 'dist': 1.0, 'cuisine': 0}, 'true_relevance': 1}
+    ]
+  }
+]
+
+with open('data/evaluation_scenarios.json', 'w', encoding='utf-8') as f:
+    json.dump(scenarios, f, indent=2)
+
+print('JSON file safely created using Python!')
